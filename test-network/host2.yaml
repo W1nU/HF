@@ -14,7 +14,6 @@ volumes:
 networks:
   test:
     name: test_network
-    extenal: true
     driver: overlay
 
 services:

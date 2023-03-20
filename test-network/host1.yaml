@@ -14,7 +14,6 @@ volumes:
 networks:
   test:
     name: test_network
-    extenal: true
     driver: overlay
 
 services:
@@ -99,7 +98,7 @@ services:
     networks:
       - test
 
-   peer1.org1.example.com:
+  peer1.org1.example.com:
     container_name: peer1.org1.example.com
     image: hyperledger/fabric-peer:latest
     labels:
@@ -138,8 +137,7 @@ services:
     networks:
       - test
 
-
- peer2.org1.example.com:
+  peer2.org1.example.com:
     container_name: peer2.org1.example.com
     image: hyperledger/fabric-peer:latest
     labels:
@@ -196,7 +194,9 @@ services:
       - ../organizations:/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations
       - ../scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
     depends_on:
+      - orderer1.example.com
       - peer0.org1.example.com
-      - peer0.org2.example.com
+      - peer1.org1.example.com
+      - peer2.org1.example.com
     networks:
       - test
