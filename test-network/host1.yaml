@@ -196,6 +196,7 @@ services:
     volumes:
       - ./organizations:/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations
       - ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
+      - ./compose/docker/peercfg:/etc/hyperledger/peercfg
     depends_on:
       - orderer1.example.com
       - peer0.org1.example.com
