@@ -90,6 +90,7 @@ services:
     volumes:
       - ./organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com:/etc/hyperledger/fabric
       - peer0.org1.example.com:/var/hyperledger/production
+      - ./compose/docker/peercfg:/etc/hyperledger/peercfg
     working_dir: /root
     command: peer node start
     ports:
@@ -129,6 +130,7 @@ services:
     volumes:
       - ./organizations/peerOrganizations/org1.example.com/peers/peer1.org1.example.com:/etc/hyperledger/fabric
       - peer1.org1.example.com:/var/hyperledger/production
+      - ./compose/docker/peercfg:/etc/hyperledger/peercfg
     working_dir: /root
     command: peer node start
     ports:
@@ -168,6 +170,7 @@ services:
     volumes:
       - ./organizations/peerOrganizations/org1.example.com/peers/peer2.org1.example.com:/etc/hyperledger/fabric
       - peer2.org1.example.com:/var/hyperledger/production
+      - ./compose/docker/peercfg:/etc/hyperledger/peercfg
     working_dir: /root
     command: peer node start
     ports:
